@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/background_light"
+    tools:context=".screens.MainMenuFragment">
+
+    <ImageView
+        android:id="@+id/animated_left_arrow_gif"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="292dp"
+        android:layout_marginEnd="52dp"
+        app:layout_constraintEnd_toStartOf="@+id/porsche_logo"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@drawable/anim_arrows_final" />
+
+    <ImageView
+        android:id="@+id/animated_right_arrow_gif"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="292dp"
+        android:rotation="180"
+        app:layout_constraintStart_toEndOf="@+id/porsche_logo"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@drawable/anim_arrows_final" />
+
+    <ImageView
+        android:id="@+id/porsche_logo"
+        android:layout_width="196dp"
+        android:layout_height="235dp"
+        android:layout_marginTop="184dp"
+        android:src="@drawable/porsche_logo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/simple_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:fontFamily="@font/porsche_style_font"
+        android:text="PORSCHE HISTORY"
+        android:textAlignment="center"
+        android:textSize="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/porsche_logo" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
