@@ -14,12 +14,6 @@ class RecyclerViewAdapter(private val listener: OnItemClickListener) :
 
     private var yearList = emptyList<Year>()
 
-    override fun onBindViewHolder(holder: ExampleViewHolder, position: Int) {
-        val currentItem = yearList[position]
-
-        holder.itemView.text_view_card_item.text = currentItem.year.toString()
-    }
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ExampleViewHolder {
         val itemView = LayoutInflater.from(parent.context)
             .inflate(
@@ -29,6 +23,12 @@ class RecyclerViewAdapter(private val listener: OnItemClickListener) :
             )
 
         return ExampleViewHolder(itemView)
+    }
+
+    override fun onBindViewHolder(holder: ExampleViewHolder, position: Int) {
+        val currentItem = yearList[position]
+
+        holder.itemView.text_view_card_item.text = currentItem.year.toString()
     }
 
     override fun getItemCount() = yearList.size //exampleList.size

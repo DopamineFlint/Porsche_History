@@ -19,6 +19,6 @@ interface YearDao {
     @Query("SELECT * FROM year_table ORDER BY year ASC") //ORDER BY year ASC
     fun readAllData(): LiveData<List<Year>>
 
-    @Query("SELECT * FROM year_table WHERE id = :year")
-    fun readCurrentYearEvents(year: String): LiveData<List<YearWithEvent>> //readCurrentYearEvents(year: String)
+    @Query("SELECT * FROM year_table WHERE year = :year")
+    fun readCurrentYearEvents(year: Int): LiveData<List<YearWithEvent>> //readCurrentYearEvents(year: String)
 }
