@@ -31,7 +31,7 @@ class RecyclerViewAdapter(private val listener: OnItemClickListener) :
         holder.itemView.text_view_card_item.text = currentItem.year.toString()
     }
 
-    override fun getItemCount() = yearList.size //exampleList.size
+    override fun getItemCount() = yearList.size
 
     inner class ExampleViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView),
         View.OnClickListener {
@@ -44,17 +44,17 @@ class RecyclerViewAdapter(private val listener: OnItemClickListener) :
         override fun onClick(v: View?) {
             val position = adapterPosition
             if (position != RecyclerView.NO_POSITION) {
-                listener.onItemClick(position)
+                listener.onItemClick(position, itemView)
             }
         }
-    }
-
-    interface OnItemClickListener {
-        fun onItemClick(position: Int)
     }
 
     fun setData(year: List<Year>) {
         this.yearList = year
         notifyDataSetChanged()
+    }
+
+    interface OnItemClickListener {
+        fun onItemClick(position: Int, iv: View)
     }
 }

@@ -1,9 +1,7 @@
 package com.example.porschehistory.data
 
 import android.app.Application
-import androidx.lifecycle.AndroidViewModel
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.viewModelScope
+import androidx.lifecycle.*
 import com.example.porschehistory.data.relations.YearWithEvent
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -11,14 +9,20 @@ import kotlinx.coroutines.launch
 class YearViewModel(application: Application): AndroidViewModel(application) {
 
     val readAllData: LiveData<List<Year>>
-    val readCurrentYearEvents: LiveData<List<YearWithEvent>>
+
+    //val readCurrentYearEvents: LiveData<List<YearWithEvent>>
     private val repository: YearRepository
+    private val mYear = MutableLiveData<Int>()
 
     init {
         val yearDao = YearDataBase.getDatabase(application).yearDao()
         repository = YearRepository(yearDao)
         readAllData = repository.readAllData
-        readCurrentYearEvents = repository.readCurrentYearEvents
+        //readCurrentYearEvents = repository.readCurrentYearEvents()
+    }
+
+    val eventsInCurrentYear: LiveData<List<YearWithEvent>> = mYear.switchMap {
+        repository.readCurrentYearEvents(it)
     }
 
     fun addYear(year: Year) {
@@ -31,6 +35,10 @@ class YearViewModel(application: Application): AndroidViewModel(application) {
         viewModelScope.launch(Dispatchers.IO) {
             repository.addEvent(event)
         }
+    }
+
+    fun setCurrentYearEvents(year: Int) {
+        mYear.value = year
     }
 
 }
