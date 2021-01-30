@@ -10,7 +10,6 @@ class YearViewModel(application: Application): AndroidViewModel(application) {
 
     val readAllData: LiveData<List<Year>>
 
-    //val readCurrentYearEvents: LiveData<List<YearWithEvent>>
     private val repository: YearRepository
     private val mYear = MutableLiveData<Int>()
 
@@ -18,7 +17,6 @@ class YearViewModel(application: Application): AndroidViewModel(application) {
         val yearDao = YearDataBase.getDatabase(application).yearDao()
         repository = YearRepository(yearDao)
         readAllData = repository.readAllData
-        //readCurrentYearEvents = repository.readCurrentYearEvents()
     }
 
     val eventsInCurrentYear: LiveData<List<YearWithEvent>> = mYear.switchMap {
