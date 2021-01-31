@@ -16,6 +16,8 @@
         android:clipToPadding="false"
         android:padding="4dp"
         android:orientation="horizontal"
+        android:scrollbarThumbHorizontal="@drawable/history_scrollbar_recycler_view"
+        android:scrollbars="horizontal"
         tools:listitem="@layout/example_item"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintEnd_toEndOf="parent"

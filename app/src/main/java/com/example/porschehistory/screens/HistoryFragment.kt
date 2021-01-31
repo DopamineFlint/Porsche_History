@@ -10,9 +10,11 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.LinearSnapHelper
 import com.example.porschehistory.R
 import com.example.porschehistory.data.YearViewModel
 import com.example.porschehistory.recycler.EventRecyclerViewAdapter
+import com.example.porschehistory.recycler.HistoryItemDecoration
 import com.example.porschehistory.recycler.RecyclerViewAdapter
 import kotlinx.android.synthetic.main.example_item.view.*
 import kotlinx.android.synthetic.main.fragment_history.view.*
@@ -38,6 +40,9 @@ class HistoryFragment : Fragment(), RecyclerViewAdapter.OnItemClickListener {
             LinearLayoutManager.HORIZONTAL,
             false
         )
+        recyclerView.addItemDecoration(HistoryItemDecoration())
+        val snapHelper = LinearSnapHelper()
+        snapHelper.attachToRecyclerView(recyclerView)
 
         val eventAdapter = EventRecyclerViewAdapter()
         val eventRecyclerView = view.recycler_view_events
