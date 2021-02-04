@@ -9,8 +9,7 @@ import com.example.porschehistory.R
 import com.example.porschehistory.data.Year
 import kotlinx.android.synthetic.main.example_item.view.*
 
-class RecyclerViewAdapter(private val listener: OnItemClickListener) :
-    RecyclerView.Adapter<RecyclerViewAdapter.ExampleViewHolder>() {
+class RecyclerViewAdapter() : RecyclerView.Adapter<RecyclerViewAdapter.ExampleViewHolder>() {
 
     private var yearList = emptyList<Year>()
 
@@ -33,28 +32,14 @@ class RecyclerViewAdapter(private val listener: OnItemClickListener) :
 
     override fun getItemCount() = yearList.size
 
-    inner class ExampleViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView),
-        View.OnClickListener {
+    inner class ExampleViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+
         val textView: TextView = itemView.text_view_card_item
 
-        init {
-            itemView.setOnClickListener(this)
-        }
-
-        override fun onClick(v: View?) {
-            val position = adapterPosition
-            if (position != RecyclerView.NO_POSITION) {
-                listener.onItemClick(position, itemView)
-            }
-        }
     }
 
     fun setData(year: List<Year>) {
         this.yearList = year
         notifyDataSetChanged()
-    }
-
-    interface OnItemClickListener {
-        fun onItemClick(position: Int, iv: View)
     }
 }
