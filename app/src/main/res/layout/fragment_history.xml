@@ -9,44 +9,32 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_view_history_timeline"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="36dp"
         android:layout_marginEnd="8dp"
         android:clipToPadding="false"
         android:padding="4dp"
         android:orientation="horizontal"
-        android:scrollbarThumbHorizontal="@drawable/history_scrollbar_recycler_view"
-        android:scrollbars="horizontal"
-        tools:listitem="@layout/example_item"
+        android:fadingEdgeLength="100dp"
+        android:requiresFadingEdge="horizontal"
+        tools:listitem="@layout/history_item_concept"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/button_test_add"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
-        android:layout_marginEnd="156dp"
-        android:text="add"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/recycler_view_history_timeline" />
-
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_view_events"
         android:layout_width="match_parent"
         android:layout_height="460dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
         android:clipToPadding="false"
         android:orientation="vertical"
         android:padding="4dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button_test_add"
-        tools:layout_editor_absoluteX="-8dp"
+        app:layout_constraintTop_toBottomOf="@+id/recycler_view_history_timeline"
+        tools:layout_editor_absoluteX="8dp"
         tools:listitem="@layout/event_item" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

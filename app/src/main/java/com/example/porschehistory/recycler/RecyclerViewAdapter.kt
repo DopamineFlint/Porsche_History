@@ -7,7 +7,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.porschehistory.R
 import com.example.porschehistory.data.Year
-import kotlinx.android.synthetic.main.example_item.view.*
+import kotlinx.android.synthetic.main.history_item_concept.view.*
 
 class RecyclerViewAdapter() : RecyclerView.Adapter<RecyclerViewAdapter.ExampleViewHolder>() {
 
@@ -16,7 +16,7 @@ class RecyclerViewAdapter() : RecyclerView.Adapter<RecyclerViewAdapter.ExampleVi
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ExampleViewHolder {
         val itemView = LayoutInflater.from(parent.context)
             .inflate(
-                R.layout.example_item,
+                R.layout.history_item_concept,
                 parent,
                 false
             )
@@ -27,14 +27,14 @@ class RecyclerViewAdapter() : RecyclerView.Adapter<RecyclerViewAdapter.ExampleVi
     override fun onBindViewHolder(holder: ExampleViewHolder, position: Int) {
         val currentItem = yearList[position]
 
-        holder.itemView.text_view_card_item.text = currentItem.year.toString()
+        holder.itemView.history_text_year.text = currentItem.year.toString()
     }
 
     override fun getItemCount() = yearList.size
 
     inner class ExampleViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
-        val textView: TextView = itemView.text_view_card_item
+        val textView: TextView = itemView.history_text_year
 
     }
 

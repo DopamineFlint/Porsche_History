@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="200dp"
+    android:layout_height="match_parent"
+    app:cardElevation="0dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="200dp"
+        android:layout_height="100dp">
+
+        <FrameLayout
+            android:id="@+id/year_frame"
+            android:layout_width="match_parent"
+            android:layout_height="25dp"
+            android:background="@drawable/border_history_item_year_frame"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/history_text_year"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/porsche_style_font"
+                android:gravity="center"
+                android:text="YEAR" />
+
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/history_frame_one"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:background="@drawable/border_history_item_frame_main"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/year_frame">
+
+            <TextView
+                android:id="@+id/test_text"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/porsche_style_font"
+                android:gravity="center"
+                android:text="PORSCHE" />
+
+            <ImageView
+                android:id="@+id/porsche_picture"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:src="@drawable/porsche_911" />
+
+        </FrameLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

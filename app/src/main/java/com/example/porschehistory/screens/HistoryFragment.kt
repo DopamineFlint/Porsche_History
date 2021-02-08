@@ -18,8 +18,8 @@ import com.example.porschehistory.data.YearViewModel
 import com.example.porschehistory.recycler.EventRecyclerViewAdapter
 import com.example.porschehistory.recycler.HistoryItemDecoration
 import com.example.porschehistory.recycler.RecyclerViewAdapter
-import kotlinx.android.synthetic.main.example_item.view.*
 import kotlinx.android.synthetic.main.fragment_history.view.*
+import kotlinx.android.synthetic.main.history_item_concept.view.*
 
 class HistoryFragment : Fragment() {
 
@@ -58,7 +58,7 @@ class HistoryFragment : Fragment() {
 
                     if (centerView != null) {
                         val pos: Int? = recyclerView.layoutManager?.getPosition(centerView)
-                        val year = centerView.text_view_card_item.text.toString().toInt()
+                        val year = centerView.history_text_year.text.toString().toInt()
                         mYearViewModel.setCurrentYearEvents(year)
                         Log.d("PositionLog", "$pos")
                     } else {
@@ -88,9 +88,9 @@ class HistoryFragment : Fragment() {
         })
 
         //will be removed later
-        view.button_test_add.setOnClickListener {
-            insertDataToDatabase()
-        }
+        //view.button_test_add.setOnClickListener {
+        //    insertDataToDatabase()
+        //}
 
         return view
     }
