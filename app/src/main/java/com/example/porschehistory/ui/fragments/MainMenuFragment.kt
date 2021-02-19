@@ -1,4 +1,4 @@
-package com.example.porschehistory.screens
+package com.example.porschehistory.ui.fragments
 
 import android.os.Bundle
 import android.os.Handler

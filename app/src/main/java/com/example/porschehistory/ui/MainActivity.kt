@@ -1,8 +1,9 @@
-package com.example.porschehistory
+package com.example.porschehistory.ui
 
 import android.os.Bundle
 import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
+import com.example.porschehistory.R
 
 class MainActivity : AppCompatActivity() {
 

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@android:color/background_light"
-    tools:context=".screens.MainMenuFragment">
+    tools:context=".ui.fragments.MainMenuFragment">
 
     <ImageView
         android:id="@+id/animated_left_arrow_gif"
